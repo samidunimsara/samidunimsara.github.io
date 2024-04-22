@@ -78,7 +78,7 @@ goatcounter:
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://www.hackerone.com/sites/default/files/styles/carousel_spotlight/public/key-takeway-image-5_0.jpg.webp
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

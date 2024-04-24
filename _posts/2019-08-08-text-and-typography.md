@@ -14,5 +14,4 @@ Recon 101 Sinhala What to do before hacking
 
 # H1 - heading
 
-i'm back
 samidunimsara

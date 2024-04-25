@@ -8,10 +8,11 @@ tags: [hacking]
 
 ---
 
+> The English-speaking world already has tons of books, talks, guides, and
+info about hacking
 
+##### Recon For Ex 
 
-## Recon For Ex :( symyh
+`ffuf -u $domain/FUZZ -w list/api.txt`
 
-
-
-### samidunimsara(Odayex)
+###### samidunimsara(Odayex)

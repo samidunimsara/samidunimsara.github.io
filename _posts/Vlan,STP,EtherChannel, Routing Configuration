@@ -81,7 +81,7 @@ switch(config-vlan)#exit
 - ISL is an old Cisco proprietary protocol, created before the industry standard IEEE
 - 802.1Q. Dot1q is an **industry standard protocol** created by the **IEEE** (Institute of Electrical and Electronics Engineers)
 
-![Screenshot from 2024-01-02 10-30-59.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-02_10-30-59.png)
+![Screenshot from 2024-01-02 10-30-59.png](/assets/Screenshot_from_2024-01-02_10-30-59.png)
 
 - **The dot1q tag is inserted between the source MAC address and the type/length fields of the Ethernet header.**
 
@@ -101,7 +101,7 @@ switch# show interfaces trunk
 
 **Modifying allowed VLANs (add/remove/all/except/none)**
 
-![Screenshot from 2024-01-02 11-01-29.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-02_11-01-29.png)
+![Screenshot from 2024-01-02 11-01-29.png](/assets/Screenshot_from_2024-01-02_11-01-29.png)
 
 - `**WORD`** allows you to simply configure the list of VLANs allowed.
 
@@ -147,7 +147,7 @@ switch(config-if)# switchport trunk native vlan <VLAN number>
 
 ---
 
-![Screenshot from 2024-01-02 11-38-37.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-02_11-38-37.png)
+![Screenshot from 2024-01-02 11-38-37.png](/assets/Screenshot_from_2024-01-02_11-38-37.png)
 
 **Configuring SW01 `interface g0/0` as a trunk port**
 
@@ -257,11 +257,11 @@ the interface**
 - **The switch with the lowest Bridge ID becomes the root bridge.**
 - **ALL ports on the root bridge are put in a forwarding state, and other switches in the  topology must have a path to reach the root bridge.**
 
-![Screenshot from 2024-01-08 20-02-28.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-08_20-02-28.png)
+![Screenshot from 2024-01-08 20-02-28.png](/assets/Screenshot_from_2024-01-08_20-02-28.png)
 
-![Screenshot from 2024-01-08 20-07-20.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-08_20-07-20.png)
+![Screenshot from 2024-01-08 20-07-20.png](/assets/Screenshot_from_2024-01-08_20-07-20.png)
 
-![Screenshot from 2024-01-12 17-47-18.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-12_17-47-18.png)
+![Screenshot from 2024-01-12 17-47-18.png](/assets/Screenshot_from_2024-01-12_17-47-18.png)
 
 ---
 
@@ -300,7 +300,7 @@ port-channel load-balance src-dst-mac
 
 ### **EtherChannel protocols - PAgP, LACP, Static**
 
-![Screenshot from 2024-01-14 18-10-35.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-14_18-10-35.png)
+![Screenshot from 2024-01-14 18-10-35.png](/assets/Screenshot_from_2024-01-14_18-10-35.png)
 
 ### **EtherChannel Configuration - PAgP**
 
@@ -465,15 +465,15 @@ Understanding the output of `show ip route` helps network administrators analyze
 
 **Dynamic routing protocol types**
 
-![Screenshot from 2024-01-15 19-24-26.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-15_19-24-26.png)
+![Screenshot from 2024-01-15 19-24-26.png](/assets/Screenshot_from_2024-01-15_19-24-26.png)
 
 **IGP/EGP algorithm types**
 
-![Screenshot from 2024-01-15 19-29-22.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-15_19-29-22.png)
+![Screenshot from 2024-01-15 19-29-22.png](/assets/Screenshot_from_2024-01-15_19-29-22.png)
 
 **IGP Metric chart**
 
-![Screenshot from 2024-01-15 19-57-46.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-15_19-57-46.png)
+![Screenshot from 2024-01-15 19-57-46.png](/assets/Screenshot_from_2024-01-15_19-57-46.png)
 
 - The metric is a crucial factor in determining the best route to a destination in a router's route table. When a router using a dynamic routing protocol learns multiple routes to the same destination, the metric is used to decide which route is the "best." Here are key points about metrics:
 - The metric value is used to evaluate the desirability of a route. Lower metric values are considered better.
@@ -583,9 +583,9 @@ is a crucial concept in routing protocols, especially when a router learns multi
 - form adjacencies with connected rip neighbors
 - advertise the network prefix of the interface (not the prefix the network command)
 
-![Screenshot from 2024-01-16 20-53-37.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-16_20-53-37.png)
+![Screenshot from 2024-01-16 20-53-37.png](/assets/Screenshot_from_2024-01-16_20-53-37.png)
 
-![Screenshot from 2024-01-16 20-55-42.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-16_20-55-42.png)
+![Screenshot from 2024-01-16 20-55-42.png](/assets//Screenshot_from_2024-01-16_20-55-42.png)
 
 ```bash
 Although there are no RIP neighbors connected to G2/0, R1 will continuously send RIP advertisements out of G2/0. This is unnecessary traffic, so G2/0 should be configured as a passive interface. 
@@ -593,7 +593,7 @@ Although there are no RIP neighbors connected to G2/0, R1 will continuously send
 passive-interface g2/0
 ```
 
-![Screenshot from 2024-01-16 20-59-05.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-01-16_20-59-05.png)
+![Screenshot from 2024-01-16 20-59-05.png](/assets//Screenshot_from_2024-01-16_20-59-05.png)
 
 **Advertise default route via RIP**
 
@@ -676,9 +676,9 @@ If a wildcard mask is not specified in the network command, and a classful netwo
     
     ### **Types of Dynamic Routing Protocols**
     
-    ![Screenshot from 2024-02-01 15-16-16.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-02-01_15-16-16.png)
+    ![Screenshot from 2024-02-01 15-16-16.png](/assets//Screenshot_from_2024-02-01_15-16-16.png)
     
-    ![Screenshot from 2024-02-01 15-16-50.png](Pt%20e792ed10cf7149beb3c23a37f522971d/Screenshot_from_2024-02-01_15-16-50.png)
+    ![Screenshot from 2024-02-01 15-16-50.png](/assets//Screenshot_from_2024-02-01_15-16-50.png)
     
     # OSPF
     

@@ -13,7 +13,7 @@ info about hacking
 
 ##### Recon For Ex 
 
-<iframe src="https://samidunimsara.notion.site/Recon-b536b348a18f4f11a8904745d1fcc043?pvs=4" width="600" height="400"></iframe>
+<iframe src="https://samidunimsara.notion.site/Recon-b536b348a18f4f11a8904745d1fcc043" width="600" height="400"></iframe>
 
 
 ###### samidunimsara(Odayex)

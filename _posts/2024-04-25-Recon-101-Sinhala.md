@@ -36,7 +36,7 @@ Web Application Defender's Cookbook
 - When discovering subdomains/domains/assets owned by a company, use the Google Analytics ID to expand your attack surface. The ID is in the HTML code
     1. http://Site-Overview.com
     
-    ![20220822_165458.jpg](Recon%20b536b348a18f4f11a8904745d1fcc043/20220822_165458.jpg)
+
     
     ```bash
     curl https://www.notion.so/ | grep 'ga("create"'
@@ -115,7 +115,7 @@ Web Application Defender's Cookbook
 
 - JS_TIPS
     
-    ![Screenshot from 2024-05-18 22-28-07.png](Recon%20b536b348a18f4f11a8904745d1fcc043/Screenshot_from_2024-05-18_22-28-07.png)
+
     
 
 ---
@@ -163,7 +163,7 @@ Web Application Defender's Cookbook
     
     find what year company created google or use wayback then select years to like this ths can lead to fnd new shit
     
-    ![Screenshot from 2024-05-19 12-18-19.png](Recon%20b536b348a18f4f11a8904745d1fcc043/Screenshot_from_2024-05-19_12-18-19.png)
+
     
 
 ```bash
@@ -293,7 +293,7 @@ Navigate to the "Subject Alternative Name" (SAN) field.
 
 - You can see list of domains that share the same SSL certificate.
     
-    ![Screenshot from 2024-05-18 22-58-41.png](Recon%20b536b348a18f4f11a8904745d1fcc043/Screenshot_from_2024-05-18_22-58-41.png)
+
     
 
 ---
@@ -395,7 +395,7 @@ more https://github.com/NagliNagli/Shockwave-OSS
 
 ---
 
-![40D77A43-DC36-47D9-9DBB-66BFACAF50B7.png](Recon%20b536b348a18f4f11a8904745d1fcc043/40D77A43-DC36-47D9-9DBB-66BFACAF50B7.png)
+
 
 ---
 
@@ -403,7 +403,7 @@ more https://github.com/NagliNagli/Shockwave-OSS
 
 If you found nginx server make sure to test for off-by-slash-vun
 
-![43EC904D-FD51-4BF3-8CC5-0BD89C0D3286.jpeg](Recon%20b536b348a18f4f11a8904745d1fcc043/43EC904D-FD51-4BF3-8CC5-0BD89C0D3286.jpeg)
+
 
 ---
 
@@ -433,11 +433,11 @@ beta.shodan.io
     
     [https://www.fastfwd.com/302-redirect-hijacking/](https://www.fastfwd.com/302-redirect-hijacking/)
     
-    ![Screenshot from 2024-05-18 22-37-21.png](Recon%20b536b348a18f4f11a8904745d1fcc043/Screenshot_from_2024-05-18_22-37-21.png)
+
     
 - **404 Vun nginx server**
     
-    ![Screenshot from 2024-05-18 23-29-40.png](Recon%20b536b348a18f4f11a8904745d1fcc043/Screenshot_from_2024-05-18_23-29-40.png)
+
     
 - Give a list of urls as input and receive unique urls as output (alpha)
     

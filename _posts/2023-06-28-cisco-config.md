@@ -1,13 +1,4 @@
 
----
-title: Vlan,STP,EtherChannel, Routing Configuration
-description: networking,netadmin
-author: samidunimsara
-date: 2023-05-24 11:33:00 +0800
-categories: [networking,cisco]
-tags: [networking,cisco]
-
----
 
 
 

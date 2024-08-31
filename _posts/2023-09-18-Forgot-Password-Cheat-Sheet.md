@@ -2,7 +2,7 @@
 title: Forgot Password Cheat Sheet
 description: webvun,hacking
 author: samidunimsara
-date: 2020-08-08 11:33:00 +0800
+date: 2023-09-18 11:33:00 +0800
 categories: [hackingweb, web]
 tags: [web]
 

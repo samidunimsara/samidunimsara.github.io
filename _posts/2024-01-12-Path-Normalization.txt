@@ -11,6 +11,7 @@ tags: [web,bugbounty]
 
 # Path Normalization Vulnerability
 
+## TO DO 
 ## Overview
 The path normalization vulnerability arises from a misconfiguration between the reverse proxy and the Web Application Server (WAS). This vulnerability occurs when an incorrect path in the proxy settings, such as those set by nginx, leads to unintended behavior. For instance, an attacker might insert the string `..;/` into a URL path. If passed to Tomcat, it interprets `..;/` as `../`, allowing the attacker to access directories outside the intended path.
 

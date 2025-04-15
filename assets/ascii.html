@@ -33,6 +33,13 @@ body {
   animation-delay: 3s;
 }
 
+.terminal-wrapper {
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+  
+
 /*.ascii-art {
   opacity: 0;
   animation: fadeIn 2s ease forwards;
@@ -77,15 +84,18 @@ body {
 @keyframes fadeIn {
   to { opacity: 1 }
 }
+
+
 </style>
 
-<div>
+
+<div class="terminal-wrapper">
   <div class="terminal-line">root@nmsr:~# whoami</div>
   <div class="terminal-output">root</div>
   <div class="terminal-line2">root@nmsr:~# reboot</div>
 
-  <pre class="ascii-art">                                                                                                                    
-    .
+  <pre class="ascii-art">
+                                                                                                                    
           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          

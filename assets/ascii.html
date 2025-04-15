@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>ASCII Terminal</title>
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: monospace;
       padding: 20px;
-      font-size: 16px;
+      font-size: 14px;
+      margin: 0;
     }
 
-    .line {
+    .terminal-line {
+      display: block;
       white-space: pre;
       overflow: hidden;
-      border-right: .15em solid #fff;
+      border-right: 0.15em solid #fff;
       width: 0;
-      animation: typing steps(40, end) 2s forwards, blink .75s step-end infinite;
+      animation: typing 2s steps(40, end) forwards, glitch-flicker 1s ease-in-out infinite alternate;
     }
 
-    .next-line {
-      white-space: pre;
-      overflow: hidden;
-      border-right: .15em solid #fff;
-      width: 0;
-      animation: typing steps(40, end) 2s forwards;
+    .terminal-line:nth-of-type(2) {
+      animation-delay: 2.2s, 2.2s;
+    }
+
+    .terminal-line:nth-of-type(3) {
+      animation-delay: 4.5s, 4.5s;
     }
 
     .blink {
-      animation: blink .75s step-end infinite;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    .prompt {
+      margin-top: 5px;
+      display: inline-block;
+      border-right: 0.15em solid #fff;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    .ascii {
+      display: none;
+      white-space: pre-wrap;
+      animation: fadein 1s ease forwards;
+      font-weight: bold;
+      font-size: 13px;
+      color: #fff;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      margin-top: 20px;
     }
 
     @keyframes typing {
@@ -44,25 +67,30 @@
       to { opacity: 1 }
     }
 
-    .ascii {
-      display: none;
-      color: #0f0;
-      white-space: pre;
-      animation: fadein 1s ease forwards;
-      font-weight: bold;
-      text-shadow: 0 0 5px #0f0;
-      margin-top: 20px;
+    @keyframes glitch-flicker {
+      0% { opacity: 1; text-shadow: none; }
+      20% { opacity: 0.9; text-shadow: 0 0 1px #ccc; }
+      40% { opacity: 1; text-shadow: 0 0 2px #999; }
+      60% { opacity: 0.8; text-shadow: 0 0 1px #aaa; }
+      80% { opacity: 1; text-shadow: none; }
+      100% { opacity: 1; text-shadow: 0 0 1px #ddd; }
     }
   </style>
 </head>
 <body>
-  <div id="l1" class="line">> whoami</div>
-  <div id="l2" class="next-line" style="animation-delay: 2.2s;">samidu was here</div>
-  <div id="l3" class="next-line" style="animation-delay: 4.5s;">> reboot</div>
-  <div id="l4" class="blink" style="margin-top: 5px;">> _</div>
+  <div class="terminal-line">> whoami</div>
+  <div class="terminal-line">samidu was here</div>
+  <div class="terminal-line">rm -rf /ex* </div>
+  <div class="terminal-line">> reboot</div>
+  <div id="cursor" class="prompt">> _</div>
 
   <div id="ascii" class="ascii">
-subha
+<!-- Replace with your ASCII art -->
+   ___      _     _         
+  / __| ___| |_  (_)__ _ ___
+ | (_ |/ -_)  _| | / _` (_-<
+  \___|\___|\__| |_\__,_/__/
+                            
 ************++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++********************##
 **********++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++********************
 ********+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*****************
@@ -144,14 +172,14 @@ subha
 ##############*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@########%%%%%
 ###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@######%%%%%%%
 ###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@####%%%%%%%%%
+   
   </div>
 
   <script>
-    // remove blinking cursor and show ASCII after reboot
     setTimeout(() => {
-      document.getElementById("l4").style.display = "none";
+      document.getElementById("cursor").style.display = "none";
       document.getElementById("ascii").style.display = "block";
-    }, 7000); // 7 seconds after page loads
+    }, 7000); // Show ASCII after all typing
   </script>
 </body>
 </html>

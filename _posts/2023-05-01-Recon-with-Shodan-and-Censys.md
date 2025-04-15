@@ -190,17 +190,7 @@ services.http.response.favicons.hashes:<favicon_hash>
 
 ---
 
-## 13. Additional Techniques and Recon Strategies
-
-### DNS Recon and Subdomain Enumeration
-- **Technique:** Use DNS queries to gather subdomain information.
-- **Example Query (Shodan):**
-  ```sh
-  ssl.cert.subject.cn:*.target.com
-  ```
-
-
-## 14. Bonus Recon Tips
+## 14.
 
 - **Subdomain Enumeration via SSL:**  
   ```sh

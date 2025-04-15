@@ -16,10 +16,10 @@ timezone:
 
 title: nmsr # the main title
 
-tagline: Application Security Researcher # it will display as the sub-title
+tagline: Samidu K Nimsara | hacker | appsec | RedTeamer |  Application Security Researcher # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
- Samidu Nimsara: Hacker, Application Security Researcher, and Bug Bounty Hunter from Sri Lanka. Sharing insights on cybersecurity, ethical hacking, and technical research
+ Samidu Nimsara: Samidu Nimsara ,samidunimsara,Srilankan hackers,hackers in srilanka , hacking sinhala,Hacker, Application Security Researcher, and Bug Bounty Hunter from Sri Lanka. Sharing insights on cybersecurity, ethical hacking, and technical research
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -78,7 +78,7 @@ goatcounter:
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://www.hackerone.com/sites/default/files/styles/carousel_spotlight/public/key-takeway-image-5_0.jpg.webp
+avatar: https://i.pinimg.com/736x/e1/0f/c7/e10fc721600506876df00003f1592695.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

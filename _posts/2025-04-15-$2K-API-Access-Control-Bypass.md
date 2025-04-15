@@ -16,7 +16,7 @@ The target was a SaaS app for multi-tenant cloud management—think teams sharin
 
 I started with a trial account (role: `basic_user`, tenant ID: `t-987654`). The app’s frontend was locked down tight—no obvious IDORs in the UI. DevTools showed API calls to `/v2/resources/` with my tenant ID, but nothing juicy. The API docs (buried in a help page) mentioned roles (`basic_user`, `tenant_admin`, `global_admin`), so I figured BAC was likely between tenants or roles.
 
-First, I tried the obvious: swapping `tenant_id` in requests like `/v2/resources/t-987654`. Got `403 Forbidden` every time unless it was *my* tenant. Smart move, I thought—they’re checking ownership. I sniffed around for other endpoints using dirb and a wordlist tailored for SaaS APIs (`internal`, `admin`, `config`, etc.). Nada. Hours wasted.
+First, I tried the obvious: swapping `tenant_id` in requests like `/v2/resources/t-987654`. Got `403 Forbidden` every time unless it was *my* tenant. Smart move, I thought—they’re checking ownership. I sniffed around for other endpoints using ffuf and a wordlist tailored for SaaS APIs (`internal`, `admin`, `config`, etc.). Nada. Hours wasted.
 
 Then I got desperate and proxied everything through Burp. One call caught my eye—a POST to `/internal/tenants/t-987654/config` when I updated my profile. It was weird; why was a user hitting an `internal` endpoint? The request looked like:
 

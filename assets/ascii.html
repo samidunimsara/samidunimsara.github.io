@@ -1,79 +1,73 @@
 <style>
-.terminal {
-  background-color: black;
-  color: white;
+body {
+  background: #111;
+  color: #fff;
   font-family: 'Courier New', Courier, monospace;
-  padding: 20px;
-  border-radius: 8px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  max-height: 600px;
-  box-shadow: none;
-  border: none;
+  margin: 0;
+  padding: 30px;
+  overflow-x: hidden;
 }
 
-.blink {
-  animation: blink 1s step-end infinite;
-  color: white;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-.typing::after {
-  content: "_";
-  animation: blink 0.8s infinite;
-}
-
-@keyframes typingEffect {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-.line {
+.terminal-line {
   overflow: hidden;
   white-space: nowrap;
+  border-right: .15em solid #00ff00;
   width: 0;
-  display: block;
-  border-right: 1px solid white;
+  animation: typing 2s steps(30, end) forwards, blink-caret .75s step-end infinite;
 }
 
-.line:nth-child(1) {
-  animation: typingEffect 2s steps(30, end) forwards;
-}
-.line:nth-child(2) {
-  animation: typingEffect 2s steps(30, end) 2.2s forwards;
-}
-.line:nth-child(3) {
-  animation: typingEffect 2s steps(30, end) 4.4s forwards;
-}
-.line:nth-child(4) {
-  animation: typingEffect 2s steps(30, end) 6.6s forwards;
+.terminal-output {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2.2s;
+  margin-top: 5px;
+  color: #0f0;
 }
 
-.glitch {
-  animation: glitch 0.4s infinite;
+.terminal-line2 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid #00ff00;
+  width: 0;
+  animation: typing2 2s steps(30, end) forwards;
+  animation-delay: 3s;
 }
 
-@keyframes glitch {
-  0% { text-shadow: 2px 0 red; }
-  20% { text-shadow: -2px 0 lime; }
-  40% { text-shadow: 2px 2px blue; }
-  60% { text-shadow: -2px -2px magenta; }
-  80% { text-shadow: 2px 2px cyan; }
-  100% { text-shadow: none; }
+.ascii-art {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 6s;
+  margin-top: 20px;
+  color: #0f0;
+  font-size: 13px;
+  line-height: 14px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 18ch }
+}
+
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 17ch }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1 }
 }
 </style>
 
-<div class="terminal">
-  <div class="line">> whoami</div>
-  <div class="line">samidu was here..</div>
-  <div class="line">> reboot</div>
-  <div class="typing glitch">█</div>
+<div>
+  <div class="terminal-line">root@7x:~# whoami</div>
+  <div class="terminal-output">root</div>
+  <div class="terminal-line2">root@7x:~# reboot</div>
 
-  <div style="margin-top:20px; white-space: pre; font-family: monospace;">
-<pre>
+  <pre class="ascii-art">
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -102,8 +96,6 @@
 %%%%%%%######%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%@@@@@@@@@@@@@
 %%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-</pre>
-  </div>
+  </pre>
 </div>
 

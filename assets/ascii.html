@@ -3,18 +3,66 @@
 <head>
   <style>
     body {
-      background-color: #111;
-      color: #0f0; /* or any color you like */
+      background-color: #000;
+      color: #fff;
       font-family: monospace;
-      white-space: pre;
       padding: 20px;
+      font-size: 16px;
+    }
+
+    .line {
+      white-space: pre;
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      width: 0;
+      animation: typing steps(40, end) 2s forwards, blink .75s step-end infinite;
+    }
+
+    .next-line {
+      white-space: pre;
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      width: 0;
+      animation: typing steps(40, end) 2s forwards;
+    }
+
+    .blink {
+      animation: blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes fadein {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    .ascii {
+      display: none;
+      color: #0f0;
+      white-space: pre;
+      animation: fadein 1s ease forwards;
+      font-weight: bold;
+      text-shadow: 0 0 5px #0f0;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-<pre>
-<!-- Paste your ASCII art below -->
-   /\     
+  <div id="l1" class="line">> whoami</div>
+  <div id="l2" class="next-line" style="animation-delay: 2.2s;">samidu was here</div>
+  <div id="l3" class="next-line" style="animation-delay: 4.5s;">> reboot</div>
+  <div id="l4" class="blink" style="margin-top: 5px;">> _</div>
+
+  <div id="ascii" class="ascii">
+subha
 ************++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++********************##
 **********++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++********************
 ********+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*****************
@@ -96,6 +144,14 @@
 ##############*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@########%%%%%
 ###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@######%%%%%%%
 ###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@####%%%%%%%%%
-  </pre>
+  </div>
+
+  <script>
+    // remove blinking cursor and show ASCII after reboot
+    setTimeout(() => {
+      document.getElementById("l4").style.display = "none";
+      document.getElementById("ascii").style.display = "block";
+    }, 7000); // 7 seconds after page loads
+  </script>
 </body>
 </html>

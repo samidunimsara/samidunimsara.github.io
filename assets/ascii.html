@@ -33,7 +33,7 @@ body {
   animation-delay: 3s;
 }
 
-.ascii-art {
+/*.ascii-art {
   opacity: 0;
   animation: fadeIn 2s ease forwards;
   animation-delay: 6s;
@@ -41,8 +41,25 @@ body {
   color: #fff;
   font-size: 13px;
   line-height: 14px;
-}
+}*/
 
+ .ascii-art {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 6s;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 14px;
+  margin-left: 0;         /* Push it to the left */
+  padding-left: 0;        /* Ensure no internal space on the left */
+  text-align: left;       /* Make sure it's left-aligned */
+  white-space: pre;       /* Preserve spacing in ASCII */
+  font-family: monospace; /* Ensure consistent character width */
+}
+ 
+  
+  
 @keyframes typing {
   from { width: 0 }
   to { width: 18ch }

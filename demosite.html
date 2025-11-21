@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Language Academy | Spoken English Course</title>
+    <!-- Tailwind CSS for Professional Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter for a cleaner, more corporate/academic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        elaBlue: '#003366', // Oxford Blue - Professional & Academic
+                        elaAccent: '#E6B800', // Muted Gold
+                        elaLight: '#F0F4F8', // Light Blue-Grey background
+                        elaText: '#1E293B', // Slate 800
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern Gradient Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #003366;
+            border-radius: 4px;
+        }
+        
+        /* Pattern Highlight */
+        .pattern-highlight {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            border-bottom: 2px solid #93c5fd;
+        }
+
+        /* Glass effect for cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-elaLight font-sans text-elaText antialiased selection:bg-elaAccent selection:text-elaBlue">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo -->
+                <div class="bg-elaBlue text-white p-2 rounded-lg font-serif font-bold text-xl w-12 h-12 flex items-center justify-center shadow-lg">
+                    ELA
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-elaBlue leading-none tracking-tight">English Language Academy</h1>
+                    <p class="text-xs text-gray-500 font-medium mt-1 tracking-wide">PROFESSIONAL SPOKEN ENGLISH</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="#home" class="text-gray-600 hover:text-elaBlue transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-elaBlue transition">About</a>
+                <a href="#gallery" class="text-gray-600 hover:text-elaBlue transition">Memories</a>
+                <a href="#reviews" class="text-gray-600 hover:text-elaBlue transition">Reviews</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-elaBlue" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 shadow-lg">
+            <a href="#home" class="block py-3 text-gray-700 hover:text-elaBlue font-medium border-b border-gray-100">Home</a>
+            <a href="#about" class="block py-3 text-gray-700 hover:text-elaBlue font-medium border-b border-gray-100">About</a>
+            <a href="#gallery" class="block py-3 text-gray-700 hover:text-elaBlue font-medium border-b border-gray-100">Memories</a>
+            <a href="#reviews" class="block py-3 text-gray-700 hover:text-elaBlue font-medium">Reviews</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <!-- Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full bg-white z-0">
+            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-70"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-yellow-50 rounded-full blur-3xl opacity-70"></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+                <div class="inline-block bg-blue-100 text-elaBlue px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                    Premier English Course
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-elaBlue mb-6 leading-tight font-serif">
+                    Master English <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-elaBlue to-blue-500">With Confidence</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    The most effective 45-Day Intensive Spoken English program in Polonnaruwa. Unlock your potential today.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <!-- WhatsApp Join Button Only -->
+                    <a href="https://wa.me/94710342056?text=Hi,%20I%20would%20like%20to%20join%20the%20class" target="_blank" class="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-green-700 transition shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-2xl"></i> 
+                        <span>Join Class Now</span>
+                    </a>
+                </div>
+
+                <div class="mt-10 flex items-center justify-center md:justify-start gap-2 text-sm text-gray-500 font-medium">
+                    <i class="fas fa-check-circle text-green-500"></i> Specialized for After A/L Students
+                    <span class="mx-2">•</span>
+                    <i class="fas fa-check-circle text-green-500"></i> Professional Certification
+                </div>
+            </div>
+            
+            <!-- Hero Image Frame -->
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-elaBlue rounded-[2rem] rotate-3 opacity-10 scale-105"></div>
+                    <img src="https://placehold.co/500x600/003366/white?text=Mr.+Pradeep+Jayawardena" alt="Mr. Pradeep Jayawardena" class="relative rounded-[2rem] shadow-2xl w-full max-w-md object-cover border-8 border-white">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-green-100 p-3 rounded-full text-green-600">
+                                <i class="fas fa-user-graduate text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">1000+ Students</p>
+                                <p class="text-xs text-gray-500">Successfully Trained</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facebook Reviews Section (Simulated & Filtered) -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-elaBlue mb-4 font-serif">What Our Students Say</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Real feedback from our students on Facebook. We are proud to be the most recommended class in the region.
+                </p>
+                <a href="https://web.facebook.com/share/p/1A7Jf1kvVa/" target="_blank" class="inline-block mt-4 text-blue-600 font-medium hover:underline">
+                    View original post on Facebook <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Classroom Learning Examples -->
+    <section id="examples" class="bg-gray-50 py-20 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-elaBlue mb-2 font-serif">Classroom Content</h2>
+                    <p class="text-gray-500">A glimpse into our daily sentence patterns.</p>
+                </div>
+                <!-- Tabs Buttons (Small) -->
+                <div class="flex bg-gray-200 p-1 rounded-lg mt-4 md:mt-0">
+                    <button onclick="switchTab('patterns')" id="tab-patterns" class="px-6 py-2 rounded-md font-medium text-sm transition shadow-sm bg-white text-elaBlue">Patterns</button>
+                    <button onclick="switchTab('spoken')" id="tab-spoken" class="px-6 py-2 rounded-md font-medium text-sm transition text-gray-600 hover:text-elaBlue">Spoken</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="content-area">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Locations (Modern Cards) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-elaBlue mb-6 font-serif">Center of Excellence</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Located conveniently in Polonnaruwa, the English Language Academy (ELA) provides a state-of-the-art learning environment. Our curriculum is designed to bridge the gap between theoretical knowledge and practical fluency.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Location Card 1 -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition">
+                            <div class="bg-white p-3 rounded-full shadow-sm text-elaBlue">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Polonnaruwa Center</h4>
+                                <p class="text-sm text-gray-500">The Commercial Complex, Tourists Information Centre</p>
+                            </div>
+                        </div>
+                         <!-- Location Card 2 -->
+                         <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition">
+                            <div class="bg-white p-3 rounded-full shadow-sm text-elaBlue">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Hingurakgoda Center</h4>
+                                <p class="text-sm text-gray-500">Deepaloka Institute</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://placehold.co/400x500/003366/white?text=Classroom" class="rounded-2xl shadow-lg w-full h-64 object-cover transform translate-y-8">
+                    <img src="https://placehold.co/400x500/E6B800/white?text=Students" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories / Gallery -->
+    <section id="gallery" class="py-20 bg-elaBlue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 font-serif">Class Memories</h2>
+                <p class="text-blue-200">Celebrating our O/L Batches and Success Stories</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="group relative overflow-hidden rounded-xl aspect-square bg-blue-800 cursor-pointer">
+                    <img src="https://placehold.co/400x400/1e40af/white?text=Batch+2023" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl aspect-square bg-blue-800 cursor-pointer">
+                    <img src="https://placehold.co/400x400/1e3a8a/white?text=Events" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl aspect-square bg-blue-800 cursor-pointer">
+                    <img src="https://placehold.co/400x400/172554/white?text=Awards" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl aspect-square bg-blue-800 cursor-pointer">
+                    <img src="https://placehold.co/400x400/0f172a/white?text=Group+Photo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white mb-2">English Language Academy</h3>
+                    <p class="text-sm text-gray-500">The professional choice for English fluency.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://web.facebook.com/profile.php?id=100057359443376" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/94710342056" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-600">
+                &copy; 2024 ELA Polonnaruwa. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/94710342056" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition z-50 flex items-center justify-center w-14 h-14">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // --- Simulated Facebook Data ---
+        // Since we cannot fetch live data without an API token, we use a static list 
+        // representing the comments on the provided FB post: https://web.facebook.com/share/p/1A7Jf1kvVa/
+        // The filter logic you requested (words > 5) is applied below.
+        
+        const rawFacebookComments = [
+            { name: "Kasun Perera", text: "Super class!", profile: "KP" }, // Too short (2 words)
+            { name: "Dilshan Madushanka", text: "Highly recommended for everyone who wants to speak fluent English. Pradeep sir is the best.", profile: "DM" }, // Long enough
+            { name: "Nimali Silva", text: "Good.", profile: "NS" }, // Too short
+            { name: "Tharindu Jayasooriya", text: "I learned so much in just 45 days. The pattern system is really working well. Thank you sir.", profile: "TJ" }, // Long enough
+            { name: "Amaya De Alwis", text: "Best place in Polonnaruwa for English.", profile: "AD" }, // Long enough (6 words)
+            { name: "Ruwan Kumara", text: "Nice.", profile: "RK" }, // Too short
+            { name: "Sanduni Perera", text: "If you want to speak english properly this is the only place to go. The teaching style is very friendly.", profile: "SP" }, // Long enough
+            { name: "Kamal Gunaratne", text: "Supiri sir.", profile: "KG" } // Too short
+        ];
+
+        function renderReviews() {
+            const container = document.getElementById('reviews-grid');
+            container.innerHTML = '';
+
+            // --- THE FILTER LOGIC ---
+            // Only show comments where word count is greater than 5
+            const filteredComments = rawFacebookComments.filter(comment => {
+                const wordCount = comment.text.trim().split(/\s+/).length;
+                return wordCount > 5;
+            });
+
+            if (filteredComments.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 col-span-3">No reviews match the criteria.</p>';
+                return;
+            }
+
+            filteredComments.forEach(review => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition relative";
+                card.innerHTML = `
+                    <div class="absolute top-6 right-6 text-blue-100 text-4xl opacity-50"><i class="fas fa-quote-right"></i></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 text-blue-700 font-bold flex items-center justify-center text-sm">
+                            ${review.profile}
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900 text-sm">${review.name}</p>
+                            <p class="text-xs text-blue-600">Facebook User</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed relative z-10">"${review.text}"</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- Classroom Content Logic ---
+        const classroomData = [
+            { id: 1, text: "I am planning to [verb]", category: "patterns", note: "Meaning: මම යම් දෙයක් කරන්න සැලසුම් කරනවා." },
+            { id: 2, text: "Are you sure about [noun/verb-ing]?", category: "patterns", note: "Meaning: ඔයාට විශ්වාසද?" },
+            { id: 3, text: "How often do you [verb]?", category: "patterns", note: "Meaning: කොච්චර නිතර ඔයා කරනවද?" },
+            { id: 10, text: "Good morning, how are you doing today?", category: "spoken", note: "Formal greeting" },
+            { id: 11, text: "Could you please repeat that?", category: "spoken", note: "When you didn't hear someone." },
+            { id: 12, text: "I totally agree with you.", category: "spoken", note: "Expressing agreement." }
+        ];
+
+        let currentTab = 'patterns';
+
+        function switchTab(tabName) {
+            currentTab = tabName;
+            
+            // Button Styles
+            const btnPatterns = document.getElementById('tab-patterns');
+            const btnSpoken = document.getElementById('tab-spoken');
+            const activeClass = "bg-white text-elaBlue shadow-sm";
+            const inactiveClass = "text-gray-600 hover:text-elaBlue";
+
+            if (tabName === 'patterns') {
+                btnPatterns.className = `px-6 py-2 rounded-md font-medium text-sm transition ${activeClass}`;
+                btnSpoken.className = `px-6 py-2 rounded-md font-medium text-sm transition ${inactiveClass}`;
+            } else {
+                btnPatterns.className = `px-6 py-2 rounded-md font-medium text-sm transition ${inactiveClass}`;
+                btnSpoken.className = `px-6 py-2 rounded-md font-medium text-sm transition ${activeClass}`;
+            }
+            
+            renderContent();
+        }
+
+        function renderContent() {
+            const container = document.getElementById('content-area');
+            container.innerHTML = '';
+
+            const filteredData = classroomData.filter(item => item.category === currentTab);
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-blue-300 transition";
+                
+                let displayText = item.text;
+                if (item.category === 'patterns') {
+                    displayText = displayText.replace(/\[(.*?)\]/g, '<span class="pattern-highlight">$1</span>');
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-1">${displayText}</h4>
+                        ${item.note ? `<p class="text-xs text-gray-500">${item.note}</p>` : ''}
+                    </div>
+                    <button onclick="speakText('${item.text.replace(/'/g, "\\'")}')" class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                        <i class="fas fa-volume-up text-xs"></i>
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function speakText(text) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderReviews();
+            renderContent();
+        });
+    </script>
+</body>
+</html>

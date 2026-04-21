@@ -1,112 +1,8 @@
 ---
 ---
 /*
-  nmsr-green.css — minimal green accent override for Chirpy dark theme
-  Keeps the original Chirpy UI intact; only recolors accents to hacker green.
+  nmsr.css — minimal dark/white override for Chirpy theme
 */
-
-/* ─── COLOUR TOKENS ─────────────────────────────────────────────── */
-:root {
-  --hack-green:      #00ff41;
-  --hack-green-dim:  #00cc33;
-  --hack-green-glow: rgba(0, 255, 65, 0.18);
-  --hack-cyan:       #00e5ff;
-  --hack-amber:      #ffb300;
-  --hack-red:        #ff2e63;
-}
-
-/* ─── AVATAR — green glow ring ──────────────────────────────────── */
-#sidebar .avatar img,
-.sidebar .avatar img {
-  border: 2px solid var(--hack-green) !important;
-  box-shadow: 0 0 14px var(--hack-green), 0 0 36px rgba(0,255,65,0.25) !important;
-}
-
-/* ─── SITE TITLE ────────────────────────────────────────────────── */
-#sidebar .site-title a,
-.sidebar .site-title a {
-  color: var(--hack-green) !important;
-  text-shadow: 0 0 10px rgba(0,255,65,0.35) !important;
-}
-
-/* ─── NAV ACTIVE / HOVER ────────────────────────────────────────── */
-#sidebar nav a:hover,
-.sidebar nav a:hover,
-#sidebar nav a.active,
-.sidebar nav a.active {
-  color: var(--hack-green) !important;
-  border-left-color: var(--hack-green) !important;
-}
-
-/* ─── TOPBAR BORDER ─────────────────────────────────────────────── */
-#topbar-wrapper,
-.topbar-wrapper {
-  border-bottom-color: var(--hack-green-dim) !important;
-}
-
-/* ─── HEADINGS ──────────────────────────────────────────────────── */
-h1, h2 {
-  color: var(--hack-green) !important;
-}
-h3 {
-  color: var(--hack-cyan) !important;
-}
-
-/* ─── LINKS ─────────────────────────────────────────────────────── */
-a {
-  color: var(--hack-cyan) !important;
-}
-a:hover {
-  color: var(--hack-green) !important;
-  text-shadow: 0 0 5px var(--hack-green-glow) !important;
-}
-
-/* ─── CODE ──────────────────────────────────────────────────────── */
-code {
-  color: var(--hack-green) !important;
-  border-color: rgba(0,255,65,0.25) !important;
-}
-
-pre {
-  border-left: 3px solid var(--hack-green) !important;
-}
-
-/* ─── BLOCKQUOTE ────────────────────────────────────────────────── */
-blockquote {
-  border-left-color: var(--hack-amber) !important;
-}
-
-/* ─── TAGS ──────────────────────────────────────────────────────── */
-.post-tag:hover {
-  background: var(--hack-green) !important;
-  color: #000 !important;
-  text-shadow: none !important;
-}
-
-/* ─── PAGINATION ACTIVE ─────────────────────────────────────────── */
-.page-item.active .page-link {
-  background-color: var(--hack-green) !important;
-  border-color: var(--hack-green) !important;
-  color: #000 !important;
-}
-
-/* ─── READING PROGRESS BAR ──────────────────────────────────────── */
-#reading-progress-bar,
-.progress-bar {
-  background: var(--hack-green) !important;
-  box-shadow: 0 0 6px var(--hack-green) !important;
-}
-
-/* ─── SCROLLBAR ─────────────────────────────────────────────────── */
-::-webkit-scrollbar-thumb {
-  background: var(--hack-green-dim);
-}
-
-/* ─── SELECTION ─────────────────────────────────────────────────── */
-::selection {
-  background: var(--hack-green);
-  color: #000;
-}
 
 /* ─── POST AUTHOR BLOCK ─────────────────────────────────────────── */
 .post-author-block {
@@ -114,8 +10,8 @@ blockquote {
   align-items: center;
   gap: 0.6rem;
   padding: 0.6rem 1rem;
-  border: 1px solid var(--hack-green-dim);
-  background: rgba(0,255,65,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
   font-size: 0.82rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
@@ -128,20 +24,18 @@ blockquote {
 }
 
 .author-handle {
-  color: var(--hack-green) !important;
+  color: #fff !important;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
 }
 
 .author-handle:hover {
-  color: #000 !important;
-  background: var(--hack-green);
+  color: #fff !important;
+  text-decoration: underline !important;
   text-shadow: none !important;
-  padding: 0 4px;
-  border-radius: 2px;
 }
 
 .blink-cursor {
@@ -155,7 +49,7 @@ blockquote {
   50%       { opacity: 0; }
 }
 
-.author-sep { color: var(--hack-green-dim); }
+.author-sep  { color: rgba(255,255,255,0.3); }
 .author-copy { color: var(--bs-secondary-color, #6c757d); font-size: 0.78rem; }
 
 @media (max-width: 768px) {

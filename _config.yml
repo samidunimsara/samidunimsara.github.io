@@ -14,36 +14,32 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Samidu Nimsara # the main title
+title: "nmsr | Samidu Nimsara" # the main title
 
-tagline: Samidu Nimsara | H4x0r | Application Security Researcher https://hackerone.com/nmsr 🇩🇪
+tagline: "Application Security Researcher · Bug Bounty Hunter · HackerOne @nmsr"
 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
- Samidu Nimsara: Samidu Nimsara ,samidunimsara,Srilankan hackers,hackers in srilanka , hacking sinhala,Hacker, Application Security Researcher, and Bug Bounty Hunter from Sri Lanka. Sharing insights on cybersecurity, ethical hacking, and technical research
+  Samidu Nimsara (nmsr) — Application Security Researcher and Bug Bounty Hunter from Sri Lanka.
+  Specializing in API security, broken access control, and web application penetration testing.
+  HackerOne: https://hackerone.com/nmsr. Topics: cybersecurity, ethical hacking, bug bounty, IDOR,
+  BAC, API vulnerabilities, pentesting, sinhala hacking, Sri Lanka security researcher.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://samidunimsara.github.io"
 
 github:
-  username: samidunimsara # change to your github username
-
-hackerone
-  username: nmsr # change to your twitter username
+  username: samidunimsara
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: samidunimsara
-  email: nmsr@wearehackerone.com # change to your email address
+  # Full name displayed as the default post author and copyright owner in the footer
+  name: Samidu Nimsara
+  email: nmsr@wearehackerone.com
   links:
-    # The first element serves as the copyright owner's link
-    - https://hackerone.com/ # change to your twitter homepage
-    - https://github.com/samidunimsara # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/samidunimsara
+    # First element = copyright owner link
+    - https://hackerone.com/nmsr
+    - https://github.com/samidunimsara
 
 google_site_verification: # fill in to your verification string
 
@@ -67,8 +63,7 @@ goatcounter:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-# theme_mode: # [light | dark]
-  theme_mode: # [dark]
+theme_mode: dark
 
 
 # The CDN endpoint for images.

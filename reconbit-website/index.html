@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReconBit — Private Intelligence &amp; Cybersecurity Agency</title>
+  <meta name="description" content="ReconBit is an elite private intelligence agency specializing in OSINT, offensive cybersecurity, SIGINT, digital forensics, and advanced threat intelligence operations.">
+  <meta name="keywords" content="OSINT, cybersecurity, SIGINT, penetration testing, threat intelligence, digital forensics, private intelligence, ReconBit">
+  <meta name="author" content="ReconBit">
+  <meta property="og:title" content="ReconBit — Private Intelligence & Cybersecurity Agency">
+  <meta property="og:description" content="Elite private intelligence operations. OSINT, offensive security, SIGINT, and advanced cyber capabilities.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#06090f">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scanline CRT overlay -->
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/logo.png" alt="ReconBit Logo" width="42" height="42">
+        <span class="nav-logo-text">ReconBit</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Request Briefing</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero-bg.png" alt="" aria-hidden="true">
+    </div>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        <span id="typewriter-badge">systems operational</span>
+      </div>
+      <h1>
+        Intelligence<br>
+        <span class="highlight">Beyond Borders.</span>
+      </h1>
+      <p class="hero-subtitle">
+        ReconBit is an elite private intelligence agency delivering advanced OSINT, offensive cybersecurity, SIGINT, and digital forensics to governments, corporations, and high-value targets worldwide.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <span>⬡</span> Request a Briefing
+        </a>
+        <a href="#services" class="btn-outline">
+          <span>⎔</span> Our Capabilities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <h3 id="stat-ops">200+</h3>
+        <p>Operations Completed</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 id="stat-countries">45+</h3>
+        <p>Countries Covered</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 id="stat-uptime">99.9%</h3>
+        <p>Operational Uptime</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 id="stat-classified">∞</h3>
+        <p>Data Points Analyzed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="section-container">
+      <p class="section-label reveal">// Capabilities</p>
+      <h2 class="section-title reveal">What We Do</h2>
+      <p class="section-desc reveal">
+        Full-spectrum intelligence and cyber operations. From passive reconnaissance to active engagement — we operate where others can't.
+      </p>
+      <div class="services-grid">
+
+        <!-- OSINT -->
+        <div class="service-card reveal">
+          <div class="service-card-image">
+            <img src="assets/images/service-osint.png" alt="OSINT Intelligence" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon cyan">🔍</div>
+            <h3>OSINT Intelligence</h3>
+            <p>Advanced open-source intelligence gathering across surface, deep, and dark web. Social media analytics, geolocation, and identity resolution at scale.</p>
+            <div class="service-tags">
+              <span>Social Engineering</span>
+              <span>Dark Web</span>
+              <span>Geolocation</span>
+              <span>Identity Resolution</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offensive Security -->
+        <div class="service-card reveal">
+          <div class="service-card-image">
+            <img src="assets/images/service-offensive.png" alt="Offensive Security" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon red">⚔</div>
+            <h3>Offensive Security</h3>
+            <p>Red team operations, advanced persistent threat simulation, zero-day research, and full-scope penetration testing against hardened targets.</p>
+            <div class="service-tags">
+              <span>Red Team</span>
+              <span>APT Simulation</span>
+              <span>Zero-Day</span>
+              <span>Exploitation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGINT -->
+        <div class="service-card reveal">
+          <div class="service-card-image">
+            <img src="assets/images/service-sigint.png" alt="Signals Intelligence" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon purple">📡</div>
+            <h3>Signals Intelligence</h3>
+            <p>Radio frequency analysis, communications interception, spectrum monitoring, and electromagnetic surveillance for tactical operations.</p>
+            <div class="service-tags">
+              <span>RF Analysis</span>
+              <span>COMINT</span>
+              <span>ELINT</span>
+              <span>Spectrum Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cyber Defense -->
+        <div class="service-card reveal">
+          <div class="service-card-image">
+            <img src="assets/images/service-defense.png" alt="Cyber Defense" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon green">🛡</div>
+            <h3>Threat Intelligence &amp; Defense</h3>
+            <p>Proactive threat hunting, adversary tracking, IOC development, and strategic intelligence reports to neutralize threats before impact.</p>
+            <div class="service-tags">
+              <span>Threat Hunting</span>
+              <span>IOC Development</span>
+              <span>CTI</span>
+              <span>Attribution</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Forensics -->
+        <div class="service-card reveal">
+          <div class="service-card-image">
+            <img src="assets/images/service-forensics.png" alt="Digital Forensics" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon amber">🔬</div>
+            <h3>Digital Forensics &amp; IR</h3>
+            <p>Court-admissible digital evidence collection, malware reverse engineering, incident response, and post-breach investigation across all platforms.</p>
+            <div class="service-tags">
+              <span>Malware Analysis</span>
+              <span>Memory Forensics</span>
+              <span>Incident Response</span>
+              <span>E-Discovery</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about" style="background: var(--bg-secondary);">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="assets/images/about-ops.png" alt="ReconBit Operations Center" loading="lazy">
+        </div>
+        <div class="about-text">
+          <p class="section-label reveal">// About ReconBit</p>
+          <h2 class="section-title reveal">Operating in the Shadows,<br>Delivering in the Light.</h2>
+          <p class="reveal">
+            ReconBit is a private intelligence agency built by operators, for operators. Our team comprises former intelligence community professionals, elite security researchers, and seasoned cyber warfare specialists.
+          </p>
+          <p class="reveal">
+            We provide discreet, high-impact intelligence and cybersecurity services to clients who demand absolute operational security and results that matter.
+          </p>
+          <ul class="about-features reveal">
+            <li><span class="check">✓</span> Former national intelligence community operators</li>
+            <li><span class="check">✓</span> Military-grade operational security (OPSEC)</li>
+            <li><span class="check">✓</span> 24/7 global operations center</li>
+            <li><span class="check">✓</span> End-to-end encrypted communications</li>
+            <li><span class="check">✓</span> Legal compliance across all jurisdictions</li>
+            <li><span class="check">✓</span> Custom tooling and proprietary platforms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="section-container">
+      <p class="section-label reveal">// Secure Contact</p>
+      <h2 class="section-title reveal">Initiate Contact</h2>
+      <p class="section-desc reveal">
+        All communications are encrypted. Your inquiry will be handled by our operations desk with the highest level of discretion.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Reach the Operations Desk</h3>
+          <p>Choose your preferred secure channel. We respond within 24 hours through verified, encrypted channels only.</p>
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <div class="contact-channel-icon">✉</div>
+              <div class="contact-channel-text">
+                <strong>Encrypted Email</strong>
+                <span>contact@reconbit.io</span>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">🔒</div>
+              <div class="contact-channel-text">
+                <strong>PGP Verified</strong>
+                <span>Public key available on request</span>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">💬</div>
+              <div class="contact-channel-text">
+                <strong>Signal / Wickr</strong>
+                <span>Available for verified clients</span>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="contact-channel-icon">🌐</div>
+              <div class="contact-channel-text">
+                <strong>Tor Hidden Service</strong>
+                <span>.onion address on verification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Call Sign / Name</label>
+              <input type="text" id="contact-name" placeholder="Your identifier" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Secure Email</label>
+              <input type="email" id="contact-email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-service">Service Required</label>
+            <select id="contact-service" required>
+              <option value="" disabled selected>Select capability</option>
+              <option value="osint">OSINT Intelligence</option>
+              <option value="offensive">Offensive Security</option>
+              <option value="sigint">Signals Intelligence</option>
+              <option value="defense">Threat Intelligence & Defense</option>
+              <option value="forensics">Digital Forensics & IR</option>
+              <option value="custom">Custom Operation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Briefing Details</label>
+            <textarea id="contact-message" placeholder="Describe your requirements. All submissions are encrypted." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="submitBtn" style="width: 100%; justify-content: center;">
+            <span>⬡</span> Submit Secure Briefing
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="assets/images/logo.png" alt="ReconBit" width="36" height="36">
+          <span class="nav-logo-text" style="font-size: 1.1rem;">ReconBit</span>
+        </div>
+        <p>Elite private intelligence and cybersecurity operations. We see what others miss. We go where others can't.</p>
+      </div>
+      <div>
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="#services">OSINT</a></li>
+          <li><a href="#services">Offensive Security</a></li>
+          <li><a href="#services">SIGINT</a></li>
+          <li><a href="#services">Threat Intelligence</a></li>
+          <li><a href="#services">Digital Forensics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Responsible Disclosure</a></li>
+          <li><a href="#">Warrant Canary</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ReconBit Intelligence Ltd. All rights reserved.</p>
+      <p style="font-family: var(--font-mono); color: var(--cyan); font-size: 0.7rem; letter-spacing: 2px;">
+        [ CLASSIFICATION: UNCLASSIFIED ]
+      </p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

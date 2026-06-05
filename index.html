@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samidu Nimsara | nmsr — Bug Bounty Hunter</title>
+  <meta name="description" content="Samidu Nimsara (nmsr) — Application Security Researcher &amp; Bug Bounty Hunter from Sri Lanka. Specializing in API security, IDOR, broken access control, and web application penetration testing." />
+  <meta name="keywords" content="Samidu Nimsara, nmsr, bug bounty, HackerOne, application security, penetration testing, ethical hacking, API security, IDOR, broken access control, cybersecurity, Sri Lanka" />
+  <meta name="author" content="Samidu Nimsara" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Samidu Nimsara | nmsr — Bug Bounty Hunter" />
+  <meta property="og:description" content="Application Security Researcher &amp; Bug Bounty Hunter from Sri Lanka." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://samidunimsara.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@samidunimsara" />
+  <meta name="twitter:creator" content="@samidunimsara" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" id="nav-logo">
+        <span class="prompt-symbol">$</span>
+        <span class="logo-text">nmsr</span>
+        <span class="cursor-blink">█</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home"    class="nav-link active" data-section="home">~/home</a></li>
+        <li><a href="#about"  class="nav-link" data-section="about">~/about</a></li>
+        <li><a href="#blog"   class="nav-link" data-section="blog">~/blog</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">~/contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <ul>
+      <li><a href="#home"    class="mob-link" data-section="home">~/home</a></li>
+      <li><a href="#about"  class="mob-link" data-section="about">~/about</a></li>
+      <li><a href="#blog"   class="mob-link" data-section="blog">~/blog</a></li>
+      <li><a href="#contact" class="mob-link" data-section="contact">~/contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HOME
+    ============================================================= -->
+    <section id="home" class="section section--home">
+
+      <!-- Floating badge -->
+      <div class="h1-badge" id="h1-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 1.5c4.694 0 8.5 3.806 8.5 8.5s-3.806 8.5-8.5 8.5S3.5 16.694 3.5 12 7.306 3.5 12 3.5zm0 2.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 1.5a4 4 0 110 8 4 4 0 010-8z"/></svg>
+        <span>HackerOne · nmsr</span>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-dots">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+          </div>
+          <span class="terminal-title">bash — nmsr@root: ~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="t-prompt">nmsr@root</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+            <span class="t-cmd typewriter" id="cmd1">whoami</span>
+          </div>
+          <div class="terminal-output" id="out1">
+            <p><span class="t-acc">Samidu Nimsara</span> <span class="t-dim">// nmsr</span></p>
+          </div>
+
+          <div class="terminal-line">
+            <span class="t-prompt">nmsr@root</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+            <span class="t-cmd typewriter" id="cmd2">cat /etc/identity</span>
+          </div>
+          <div class="terminal-output" id="out2">
+            <p><span class="t-key">Role:</span>     Application Security Researcher &amp; Bug Bounty Hunter</p>
+            <p><span class="t-key">Origin:</span>   Sri Lanka</p>
+            <p><span class="t-key">Handle:</span>   <a href="https://hackerone.com/nmsr" class="t-link" target="_blank" rel="noopener">hackerone.com/nmsr</a></p>
+            <p><span class="t-key">Focus:</span>    API Security · IDOR · Broken Access Control · Web Pentesting</p>
+          </div>
+
+
+
+          <div class="terminal-line">
+            <span class="t-prompt">nmsr@root</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+            <span class="t-cmd" id="cmd4"></span>
+            <span class="cursor-blink" id="live-cursor">█</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-cta">
+        <a href="#about"  class="btn btn--primary" id="cta-about">cd ~/about</a>
+        <a href="#blog"   class="btn btn--ghost"   id="cta-blog">cd ~/blog</a>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================= -->
+    <section id="about" class="section section--about">
+      <div class="section-header">
+        <span class="sec-prompt">nmsr@root:~$</span>
+        <span class="sec-cmd">cat about/README.md</span>
+      </div>
+
+      <div class="about-grid">
+        <!-- Avatar -->
+        <div class="about-avatar">
+          <div class="avatar-frame">
+            <img
+              src="https://avatars.githubusercontent.com/u/95490856?v=4"
+              alt="Samidu Nimsara"
+              class="avatar-img"
+              loading="lazy"
+              onerror="this.style.display='none'; document.getElementById('avatar-ascii-fb').style.display='block';"
+            />
+            <div class="avatar-ascii" id="avatar-ascii-fb" style="display:none;">
+<pre>
+  .-------.
+ /  .-.   \
+|  |   |   |
+ \  `-'  /
+  `-----'
+  / nmsr  \
+ ( hunter  )
+  \_______/
+</pre>
+            </div>
+            <div class="avatar-status">
+              <span class="status-dot"></span>
+              <span>Hunting bugs actively</span>
+            </div>
+            <div class="avatar-links">
+              <a href="https://hackerone.com/nmsr" class="av-link" target="_blank" rel="noopener" aria-label="HackerOne profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><circle cx="12" cy="12" r="10"/></svg>
+                H1 · nmsr
+              </a>
+              <a href="https://github.com/samidunimsara" class="av-link" target="_blank" rel="noopener" aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content">
+          <h1 class="about-name">Samidu Nimsara</h1>
+          <p class="about-handle">// @nmsr on HackerOne &nbsp;·&nbsp; @samidunimsara on GitHub</p>
+          <p class="about-tagline">Application Security Researcher &amp; Bug Bounty Hunter from Sri Lanka.</p>
+
+          <!-- Specialisations -->
+          <div class="spec-grid">
+            <div class="spec-item">
+              <span class="spec-icon">[+]</span>
+              <div>
+                <strong>Broken Access Control</strong>
+                <p>IDOR, privilege escalation, object-level auth bypass</p>
+              </div>
+            </div>
+            <div class="spec-item">
+              <span class="spec-icon">[+]</span>
+              <div>
+                <strong>API Security</strong>
+                <p>REST/GraphQL endpoint testing, mass assignment, rate limiting</p>
+              </div>
+            </div>
+            <div class="spec-item">
+              <span class="spec-icon">[+]</span>
+              <div>
+                <strong>Web Application Pentesting</strong>
+                <p>OWASP Top 10, authentication flaws, business logic</p>
+              </div>
+            </div>
+            <div class="spec-item">
+              <span class="spec-icon">[+]</span>
+              <div>
+                <strong>Reconnaissance</strong>
+                <p>Subdomain enum, JS analysis, attack surface mapping</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="timeline">
+            <h2 class="timeline-heading"><span class="t-hash">#</span> Timeline</h2>
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <span class="tl-year">2024</span>
+                <div class="tl-content">
+                  <strong>Application Security Researcher</strong> — HackerOne
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOG
+    ============================================================= -->
+    <section id="blog" class="section section--blog">
+      <div class="section-header">
+        <span class="sec-prompt">nmsr@root:~$</span>
+        <span class="sec-cmd">cat blog/posts.json | jq .</span>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="blog-card" data-post-id="exploiting-unprotected-functionality">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag--idor">broken-access</span>
+            <span class="blog-date">Jan 28, 2024</span>
+          </div>
+          <h3 class="blog-card-title">Exploiting Unprotected Functionality to Access User Profiles</h3>
+          <p class="blog-card-excerpt">How searching for legacy applications and leveraging URL history archives led to unauthorized access and modification of sensitive user profiles, earning a $500 bounty.</p>
+          <div class="blog-card-action">
+            <span class="action-prompt">nmsr@root:~$</span> <span class="action-cmd">./read.sh --post=1</span>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card" data-post-id="auth-bypass-h1">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag--auth">auth-bypass</span>
+            <span class="blog-date">Feb 2024</span>
+          </div>
+          <h3 class="blog-card-title">Bypassing authentication on a private HackerOne target</h3>
+          <p class="blog-card-excerpt">Analyzing JWT verification flaws and signature validation vulnerabilities to elevate privileges from guest to administrator.</p>
+          <div class="blog-card-action">
+            <span class="action-prompt">nmsr@root:~$</span> <span class="action-cmd">./read.sh --post=2</span>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card" data-post-id="js-recon-api">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag--recon">recon</span>
+            <span class="blog-date">Nov 2023</span>
+          </div>
+          <h3 class="blog-card-title">The power of JS analysis in API security assessment</h3>
+          <p class="blog-card-excerpt">My workflow for harvesting hidden endpoints and API credentials from minified Webpack chunks using custom regex pipelines.</p>
+          <div class="blog-card-action">
+            <span class="action-prompt">nmsr@root:~$</span> <span class="action-cmd">./read.sh --post=3</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================= -->
+    <section id="contact" class="section section--contact">
+      <div class="section-header">
+        <span class="sec-prompt">nmsr@root:~$</span>
+        <span class="sec-cmd">./contact.sh --interactive</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-links">
+            <a href="https://hackerone.com/nmsr" class="contact-link" id="link-h1" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+              </span>
+              <span class="cl-label">hackerone</span>
+              <span class="cl-value">@nmsr</span>
+            </a>
+            <a href="https://github.com/samidunimsara" class="contact-link" id="link-github" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              <span class="cl-label">github</span>
+              <span class="cl-value">@samidunimsara</span>
+            </a>
+            <a href="https://twitter.com/samidunimsara" class="contact-link" id="link-twitter" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </span>
+              <span class="cl-label">x / twitter</span>
+              <span class="cl-value">@samidunimsara</span>
+            </a>
+          </div>
+
+
+        </div>
+
+        <div class="contact-form-wrap">
+          <div class="form-header">
+            <span class="t-comment">// send me a secure message</span>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group" id="fg-name">
+              <label for="input-name" class="form-label">
+                <span class="f-prompt">$</span> name
+              </label>
+              <input type="text" id="input-name" name="name" class="form-input" placeholder="Your Name" autocomplete="name" />
+              <span class="form-error" id="err-name"></span>
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="input-email" class="form-label">
+                <span class="f-prompt">$</span> email
+              </label>
+              <input type="email" id="input-email" name="email" class="form-input" placeholder="you@example.com" autocomplete="email" />
+              <span class="form-error" id="err-email"></span>
+            </div>
+            <div class="form-group" id="fg-msg">
+              <label for="input-msg" class="form-label">
+                <span class="f-prompt">$</span> message
+              </label>
+              <textarea id="input-msg" name="message" class="form-input form-textarea" rows="5" placeholder="Hello, I'd like to discuss..."></textarea>
+              <span class="form-error" id="err-msg"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+              <span id="btn-label">./send.sh</span>
+            </button>
+            <div class="form-status" id="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-prompt">nmsr@root:~$</span>
+      <span class="footer-text">echo "Securing the web, one bug at a time." | <span class="footer-acc">cat</span></span>
+    </div>
+    <div class="footer-copy">
+      © 2024 Samidu Nimsara (nmsr) · Sri Lanka ·
+      <a href="https://hackerone.com/nmsr" target="_blank" rel="noopener">HackerOne</a> ·
+      <a href="https://github.com/samidunimsara" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BLOG MODAL
+  ============================================================= -->
+  <div class="blog-modal" id="blog-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="blog-modal-backdrop" id="modal-backdrop"></div>
+    <div class="blog-modal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span class="dot dot--red" id="modal-close-dot" title="Close" role="button" tabindex="0"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+        </div>
+        <span class="terminal-title" id="modal-terminal-title">less — blog/writeups/...</span>
+      </div>
+      <div class="blog-modal-body">
+        <div class="modal-cmd-line">
+          <span class="t-prompt">nmsr@root</span><span class="t-sep">:</span><span class="t-path">~/blog</span><span class="t-dollar">$</span>
+          <span class="t-cmd" id="modal-typed-cmd"></span><span class="cursor-blink">█</span>
+        </div>
+        <div class="blog-modal-content" id="modal-content">
+          <!-- Dynamically populated writeup -->
+        </div>
+        <div class="blog-modal-footer">
+          <button class="btn btn--ghost btn--small" id="modal-close-btn">[ esc ] /bin/exit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -311,41 +311,29 @@ $ cat sub.target.com.waymore | grep "target.com/profile_center.aspx?qs="</div>
       <p>The server accepted the forged token and granted full administrative access. The report was triaged on HackerOne, marked as critical, and resolved with a prompt hotfix enforcing asymmetric key verification checks.</p>
     `
   },
-  'js-recon-api': {
-    filename: 'js-recon-api.md',
-    title: 'The power of JS analysis in API security assessment',
+  'fantasy-book-hacking': {
+    filename: 'fantasy-book-hacking.md',
+    title: 'Why I’m Writing a Fantasy Book About Hacking (Even Though I’m Terrible at Math)',
     content: `
-      <h2>1. Overview</h2>
-      <p>Modern Single Page Applications (SPAs) often leak routing details, development environments, and hidden API endpoints in their minified client-side JavaScript bundle files. This post outlines my automation pipeline for target recon.</p>
-
-      <h2>2. Harvesting API endpoints</h2>
-      <p>When assessing a target, I download all active JS assets and run them through parsing filters. Here is my custom command line regex pattern for identifying REST endpoints:</p>
+      <h2>Why I’m Writing a Fantasy Book About Hacking</h2>
+      <p>Hey everyone!</p>
+      <p> Date: July 17, 2026 Author: samidunimsara, I wanted to share a quick update on a new hobby project I’ve been working on. If you look around my website or see my online tags, you might notice a lot of terms like <em>"Security Researcher,"</em> <em>"Bug Bounty,"</em> or <em>"HackerOne."</em></p>
       
-      <div class="modal-terminal-log">
-$ cat webpack-chunk.js | grep -oE "https?://[a-zA-Z0-9./?=&_-]+" | sort -u</div>
-
-      <p>Additionally, using JS beautifiers and link extractors like <code>LinkFinder</code> helps reveal endpoint paths such as <code>/api/v2/debug/db-console</code> or <code>/api/admin/internal-export</code> that are not linked in the main UI but are defined in the router config.</p>
-
-      <h2>3. Code Analysis Snippet</h2>
-      <p>Below is an example of an exposed development endpoint found within a minified chunk:</p>
-      <div class="modal-terminal-log">
-// Webpack chunk extract
-const devConfig = {
-  endpoint: "https://staging.internal-api.target.com",
-  bypassHeaders: {
-    "X-Dev-Mode": "authorized-bypass-token-1337"
-  }
-};</div>
-
-      <h2>4. Key Takeaways</h2>
-      <ul>
-        <li>Never store API keys or bypass headers in frontend client code.</li>
-        <li>Ensure build processes strip source maps and debug options before deploying production bundles.</li>
-        <li>Audit your frontend bundles using automated static analysis tools regularly.</li>
-      </ul>
+      <p>I have a confession to make: <strong>I am not a hacker.</strong></p>
+      <p>In fact, I struggle with basic math, and trying to learn programming code makes my head spin! The real story is that I am currently writing my very first <strong>cyber-fantasy fiction novel</strong>.</p>
+      
+      <p>The main character of my book is a brilliant, elite security researcher named <strong>nmsr</strong> who hunts down digital vulnerabilities and protects the network. Because I wanted the book to sound realistic, I’ve been researching technical hacking terms, reading bug bounty blogs, and bookmarking security sites to help build the world my character lives in.</p>
+      
+      <p>Whenever I try to understand the actual math or logic behind these concepts, I realize it’s definitely not for me! But it is incredibly fun to write about a character who <em>can</em> do it effortlessly.</p>
+      
+      <p>So, if you see me hanging around security forums or using technical tags, now you know the truth: it’s all world-building and character research for my fantasy book!</p>
+      
+      <p>Thanks for reading, and I'll keep you updated on how the writing goes!</p>
+      <p>— Samidu Nimsara</p>
     `
   }
 };
+
 
 (function () {
   const modal = document.getElementById('blog-modal');
